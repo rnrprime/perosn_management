@@ -19,4 +19,12 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::group(['middleware' => ['auth']], function () {
+    Route::get('/home', [App\Http\Controllers\ProfileController::class, 'index'])->name('home');
+
+    Route::get('basicinfo/{user_id}', [App\Http\Controllers\ProfileController::class, 'basicInfo'])->name('basicInfo');
+    Route::get('education/{user_id}', [App\Http\Controllers\ProfileController::class, 'education'])->name('education');
+    Route::get('family/{user_id}', [App\Http\Controllers\ProfileController::class, 'family'])->name('family');
+    Route::get('training/{user_id}', [App\Http\Controllers\ProfileController::class, 'training'])->name('training');
+    Route::get('work/{user_id}', [App\Http\Controllers\ProfileController::class, 'work'])->name('work');
+});

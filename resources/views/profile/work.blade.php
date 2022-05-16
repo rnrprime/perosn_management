@@ -7,8 +7,6 @@
             <div class="card">
                 <div class="card-header">
                     @include('layouts.profile_navigation')
-
-
                 </div>
 
                 <div class="card-body">
@@ -18,9 +16,7 @@
                         {{ session('status') }}
                     </div>
                     @endif
-
-                    {{ __('You are logged in!') }}
-
+                    <h1>Work</h1>
                 </div>
             </div>
         </div>

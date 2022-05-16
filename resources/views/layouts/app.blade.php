@@ -9,6 +9,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>Person Managment</title>
+    <script src="{{asset('js/jquery.min.js')}}"></script>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -19,6 +20,16 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+
+    <link href="{{ asset('css/bootstrap-datepicker.min.css') }}" rel="stylesheet">
+
+    <style>
+        .select2-selection--single:focus,
+        .select2-selection--single:hover {
+            box-shadow: 0px 0px 5px 2px rgb(226, 226, 226) !important;
+        }
+    </style>
 </head>
 
 <body>
@@ -85,5 +96,25 @@
         </main>
     </div>
 </body>
+<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+<link href="{{ asset('css/select2-bootstrap.min.css') }}" rel="stylesheet">
+
+<script src="{{ asset('js/bootstrap-datepicker.min.js') }}" defer></script>
+<script src="{{ asset('js/bootstrap-datepicker.min.js') }}" defer></script>
+
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('.select2').select2({
+    theme: "bootstrap"
+});
+            $('.datepicker').datepicker({
+                format: 'mm/dd/yyyy',
+                startDate: '-3d'
+            });
+
+        });
+</script>
 
 </html>

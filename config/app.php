@@ -52,9 +52,9 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'http://localhost:8888/reza_project/public/'),
+    'url' => env('APP_URL', ''),
 
-    'asset_url' => env('ASSET_URL', 'http://localhost:8888/reza_project/public/'),
+    'asset_url' => env('ASSET_URL', ''),
 
     /*
     |--------------------------------------------------------------------------
